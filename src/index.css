@@ -170,11 +170,146 @@ section {
   background-position: center;
 }
 
+/* Responsive Layouts */
+.desktop-only {
+  display: flex;
+}
+
+.mobile-only {
+  display: none;
+}
+
+@media (max-width: 1024px) {
+  .container {
+    padding: 0 1.5rem;
+  }
+}
+
 @media (max-width: 768px) {
+  section {
+    padding: 4rem 0;
+  }
+  
+  .desktop-only {
+    display: none;
+  }
+
+  .mobile-only {
+    display: block;
+  }
+
+  .nav-links {
+    display: none !important; /* Managed by mobile menu in JS */
+  }
+
+  .nav-cta {
+    display: none !important;
+  }
+
+  /* Hamburger Toggle */
+  .menu-toggle {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 45px;
+    height: 45px;
+    background: var(--primary);
+    color: var(--white);
+    border-radius: 12px;
+    cursor: pointer;
+    transition: var(--transition);
+  }
+
+  .menu-toggle:hover {
+    background: var(--primary-light);
+  }
+
+  /* Mobile Menu Overlay */
+  .mobile-menu {
+    position: fixed;
+    top: 80px;
+    left: 0;
+    width: 100%;
+    background: var(--white);
+    box-shadow: var(--shadow-lg);
+    z-index: 999;
+    padding: 2rem;
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+    transform: translateY(-120%);
+    transition: transform 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+  }
+
+  .mobile-menu.open {
+    transform: translateY(0);
+  }
+
+  .mobile-menu a {
+    font-size: 1.2rem;
+    font-weight: 600;
+    color: var(--primary);
+    padding: 1rem;
+    border-radius: 10px;
+    background: var(--bg-light);
+  }
+
+  /* Grids and Alignment */
+  .services-grid {
+    grid-template-columns: 1fr !important;
+  }
+
+  .showcase-grid {
+    grid-template-columns: 1fr !important;
+  }
+
+  .contact-card-split {
+    grid-template-columns: 1fr !important;
+  }
+
+  .contact-info-panel {
+    padding: 2.5rem !important;
+  }
+
+  .contact-form-panel {
+    padding: 2.5rem !important;
+  }
+
+  /* Hero Adjustments */
+  .hero h1 {
+    font-size: 2.8rem !important;
+  }
+
+  .hero p {
+    font-size: 1.1rem !important;
+  }
+
+  .hero-buttons {
+    flex-direction: column;
+    width: 100%;
+  }
+
+  .hero-buttons .btn {
+    width: 100%;
+    text-align: center;
+  }
+
+  /* Slider Adjustments */
+  .slider-container {
+    aspect-ratio: 4/3;
+  }
+}
+
+@media (max-width: 480px) {
+  .hero h1 {
+    font-size: 2.2rem !important;
+  }
+
+  .container {
+    padding: 0 1.25rem;
+  }
+
   section {
     padding: 3rem 0;
   }
-  
-  h1 { font-size: 2.5rem; }
-  h2 { font-size: 2rem; }
 }
