@@ -39,10 +39,10 @@ const App = () => {
   const handleSubmit = async (e) => {
     e.preventDefault();
     setFormStatus('submitting');
-    
+
     // REPLACE WITH YOUR FORMSPREE ID
-    const FORMSPREE_ID = 'PLACEHOLDER'; 
-    
+    const FORMSPREE_ID = 'PLACEHOLDER';
+
     try {
       const response = await fetch(`https://formspree.io/f/${FORMSPREE_ID}`, {
         method: 'POST',
@@ -73,7 +73,7 @@ const App = () => {
           <div className="logo" style={{ fontSize: '1.5rem', fontWeight: 'bold', color: 'var(--primary)', zIndex: 1001 }}>
             JHN <span style={{ color: 'var(--accent)' }}>CONSTRUCTION</span>
           </div>
-          
+
           {/* Desktop Nav */}
           <div className="nav-links desktop-only" style={{ display: 'flex', gap: '2rem' }}>
             <a href="#home">Home</a>
@@ -81,7 +81,7 @@ const App = () => {
             <a href="#showcase">Showcase</a>
             <a href="#contact">Contact</a>
           </div>
-          
+
           <div className="desktop-only nav-cta">
             <a href="tel:0870558733" className="btn btn-primary" style={{ padding: '0.6rem 1.5rem' }}>Call Now</a>
           </div>
@@ -93,7 +93,7 @@ const App = () => {
         </div>
 
         {/* Mobile Menu Overlay */}
-        <div className={`mobile-menu ${isMenuOpen ? 'open' : ''}`}>
+        <div className={`mobile-menu mobile-only ${isMenuOpen ? 'open' : ''}`}>
           <a href="#home" onClick={toggleMenu}>Home</a>
           <a href="#services" onClick={toggleMenu}>Services</a>
           <a href="#showcase" onClick={toggleMenu}>Showcase</a>
@@ -236,10 +236,10 @@ const App = () => {
             </div>
             <div className="contact-form-panel" style={{ padding: '4rem' }}>
               <h3 style={{ marginBottom: '2rem' }}>Send a Message</h3>
-              
+
               {formStatus === 'success' ? (
-                <motion.div 
-                  initial={{ opacity: 0, scale: 0.9 }} 
+                <motion.div
+                  initial={{ opacity: 0, scale: 0.9 }}
                   animate={{ opacity: 1, scale: 1 }}
                   style={{ textAlign: 'center', padding: '2rem', background: '#E7F2EE', borderRadius: '15px' }}
                 >
@@ -250,41 +250,41 @@ const App = () => {
                 </motion.div>
               ) : (
                 <form onSubmit={handleSubmit} style={{ display: 'grid', gap: '1.5rem' }}>
-                  <input 
+                  <input
                     name="name"
-                    type="text" 
-                    placeholder="Full Name" 
+                    type="text"
+                    placeholder="Full Name"
                     required
                     value={formData.name}
                     onChange={handleInputChange}
-                    style={{ width: '100%', padding: '1rem', borderRadius: '10px', border: '1px solid #ddd' }} 
+                    style={{ width: '100%', padding: '1rem', borderRadius: '10px', border: '1px solid #ddd' }}
                   />
-                  <input 
+                  <input
                     name="email"
-                    type="email" 
-                    placeholder="Email Address" 
+                    type="email"
+                    placeholder="Email Address"
                     required
                     value={formData.email}
                     onChange={handleInputChange}
-                    style={{ width: '100%', padding: '1rem', borderRadius: '10px', border: '1px solid #ddd' }} 
+                    style={{ width: '100%', padding: '1rem', borderRadius: '10px', border: '1px solid #ddd' }}
                   />
-                  <textarea 
+                  <textarea
                     name="message"
-                    placeholder="Tell us about your project" 
-                    rows="4" 
+                    placeholder="Tell us about your project"
+                    rows="4"
                     required
                     value={formData.message}
                     onChange={handleInputChange}
                     style={{ width: '100%', padding: '1rem', borderRadius: '10px', border: '1px solid #ddd', resize: 'none' }}
                   ></textarea>
-                  
+
                   {formStatus === 'error' && (
                     <p style={{ color: '#e74c3c', fontSize: '0.9rem' }}>Something went wrong. Please try again or call us.</p>
                   )}
 
-                  <button 
-                    type="submit" 
-                    className="btn btn-primary" 
+                  <button
+                    type="submit"
+                    className="btn btn-primary"
                     disabled={formStatus === 'submitting'}
                     style={{ width: '100%', position: 'relative' }}
                   >
