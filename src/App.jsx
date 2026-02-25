@@ -10,17 +10,8 @@ import before2 from './assets/images/WhatsApp Image 2026-02-11 at 09.22.04.jpeg'
 import after2 from './assets/images/WhatsApp Image 2026-02-11 at 09.22.05.jpeg';
 import heroImg from './assets/images/h.jpeg';
 
-// Import new batch of images
-import before3 from './assets/images/garden-before-1.jpg';
-import after3 from './assets/images/garden-after-1.jpg';
-import before4 from './assets/images/WhatsApp Image 2026-02-11 at 09.22.12.jpeg';
-import after4 from './assets/images/WhatsApp Image 2026-02-11 at 09.22.13.jpeg';
-import before5 from './assets/images/WhatsApp Image 2026-02-11 at 09.22.09.jpeg';
-import after5 from './assets/images/WhatsApp Image 2026-02-11 at 09.22.06.jpeg';
-
 const App = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
-  const [showMoreShowcase, setShowMoreShowcase] = useState(false);
 
   const softServices = [
     "Garden Maintenance", "Grass Planting", "Grass Cutting",
@@ -172,45 +163,6 @@ const App = () => {
             </div>
           </div>
 
-          <AnimatePresence>
-            {showMoreShowcase && (
-              <motion.div
-                initial={{ opacity: 0, height: 0 }}
-                animate={{ opacity: 1, height: 'auto' }}
-                exit={{ opacity: 0, height: 0 }}
-                transition={{ duration: 0.5, ease: "easeInOut" }}
-                style={{ overflow: 'hidden' }}
-              >
-                <div className="showcase-grid" style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(400px, 1fr))', gap: '4rem', marginTop: '4rem' }}>
-                  <div style={{ display: 'grid', gap: '1.5rem' }}>
-                    <BeforeAfterSlider before={before3} after={after3} />
-                    <h4 style={{ fontSize: '1.4rem' }}>Paving & Patio Extension</h4>
-                    <p style={{ opacity: 0.8 }}>Transforming an old garden into a sleek, modern entertainment area.</p>
-                  </div>
-                  <div style={{ display: 'grid', gap: '1.5rem' }}>
-                    <BeforeAfterSlider before={before4} after={after4} />
-                    <h4 style={{ fontSize: '1.4rem' }}>Premium Porcelain Patio</h4>
-                    <p style={{ opacity: 0.8 }}>Full patio restoration with modern porcelain tiling and integrated drainage.</p>
-                  </div>
-                  <div style={{ display: 'grid', gap: '1.5rem' }}>
-                    <BeforeAfterSlider before={before5} after={after5} />
-                    <h4 style={{ fontSize: '1.4rem' }}>Full Backyard Overhaul</h4>
-                    <p style={{ opacity: 0.8 }}>Complete structural landscaping featuring new fencing and composite planters.</p>
-                  </div>
-                </div>
-              </motion.div>
-            )}
-          </AnimatePresence>
-
-          <div style={{ textAlign: 'center', marginTop: '4rem' }}>
-            <button
-              onClick={() => setShowMoreShowcase(!showMoreShowcase)}
-              className="btn btn-accent"
-              style={{ padding: '1rem 3rem', fontSize: '1.1rem' }}
-            >
-              {showMoreShowcase ? 'Show Less' : 'See More Projects'}
-            </button>
-          </div>
         </div>
       </section>
 
