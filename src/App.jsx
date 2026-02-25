@@ -24,12 +24,6 @@ import after7 from './assets/images/1000954516.jpg';
 
 const App = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
-  const [formStatus, setFormStatus] = useState('idle'); // idle, submitting, success, error
-  const [formData, setFormData] = useState({
-    name: '',
-    email: '',
-    message: ''
-  });
   const [showMoreShowcase, setShowMoreShowcase] = useState(false);
 
   const softServices = [
@@ -44,37 +38,6 @@ const App = () => {
     "Fencing & Brickwork", "Natural Stone Walls", "Porcelain"
   ];
 
-  const handleInputChange = (e) => {
-    const { name, value } = e.target;
-    setFormData(prev => ({ ...prev, [name]: value }));
-  };
-
-  const handleSubmit = async (e) => {
-    e.preventDefault();
-    setFormStatus('submitting');
-
-    // REPLACE WITH YOUR FORMSPREE ID
-    const FORMSPREE_ID = 'PLACEHOLDER';
-
-    try {
-      const response = await fetch(`https://formspree.io/f/${FORMSPREE_ID}`, {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json'
-        },
-        body: JSON.stringify(formData)
-      });
-
-      if (response.ok) {
-        setFormStatus('success');
-        setFormData({ name: '', email: '', message: '' });
-      } else {
-        setFormStatus('error');
-      }
-    } catch (error) {
-      setFormStatus('error');
-    }
-  };
 
   const toggleMenu = () => setIsMenuOpen(!isMenuOpen);
 
@@ -268,9 +231,9 @@ const App = () => {
       {/* Contact Section */}
       <section id="contact">
         <div className="container">
-          <div className="contact-card-split" style={{ background: 'var(--white)', borderRadius: '30px', overflow: 'hidden', boxShadow: 'var(--shadow-lg)', display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(300px, 1fr))' }}>
+          <div className="contact-card-split" style={{ background: 'var(--white)', borderRadius: '30px', overflow: 'hidden', boxShadow: 'var(--shadow-lg)', maxWidth: '600px', margin: '0 auto' }}>
             <div className="contact-info-panel" style={{ background: 'var(--primary)', color: 'var(--white)', padding: '4rem' }}>
-              <h2 style={{ marginBottom: '2rem' }}>Get in Touch</h2>
+              <h2 style={{ marginBottom: '2rem', textAlign: 'center' }}>Get in Touch</h2>
               <div style={{ display: 'grid', gap: '2rem' }}>
                 <div style={{ display: 'flex', gap: '1rem', alignItems: 'center' }}>
                   <Phone color="var(--accent)" />
@@ -296,65 +259,6 @@ const App = () => {
                   </div>
                 </div>
               </div>
-            </div>
-            <div className="contact-form-panel" style={{ padding: '4rem' }}>
-              <h3 style={{ marginBottom: '2rem' }}>Send a Message</h3>
-
-              {formStatus === 'success' ? (
-                <motion.div
-                  initial={{ opacity: 0, scale: 0.9 }}
-                  animate={{ opacity: 1, scale: 1 }}
-                  style={{ textAlign: 'center', padding: '2rem', background: '#E7F2EE', borderRadius: '15px' }}
-                >
-                  <CheckCircle2 color="var(--primary)" size={48} style={{ marginBottom: '1rem' }} />
-                  <h4 style={{ color: 'var(--primary)' }}>Message Sent!</h4>
-                  <p>We'll get back to you as soon as possible.</p>
-                  <button onClick={() => setFormStatus('idle')} className="btn btn-primary" style={{ marginTop: '1.5rem' }}>Send Another</button>
-                </motion.div>
-              ) : (
-                <form onSubmit={handleSubmit} style={{ display: 'grid', gap: '1.5rem' }}>
-                  <input
-                    name="name"
-                    type="text"
-                    placeholder="Full Name"
-                    required
-                    value={formData.name}
-                    onChange={handleInputChange}
-                    style={{ width: '100%', padding: '1rem', borderRadius: '10px', border: '1px solid #ddd' }}
-                  />
-                  <input
-                    name="email"
-                    type="email"
-                    placeholder="Email Address"
-                    required
-                    value={formData.email}
-                    onChange={handleInputChange}
-                    style={{ width: '100%', padding: '1rem', borderRadius: '10px', border: '1px solid #ddd' }}
-                  />
-                  <textarea
-                    name="message"
-                    placeholder="Tell us about your project"
-                    rows="4"
-                    required
-                    value={formData.message}
-                    onChange={handleInputChange}
-                    style={{ width: '100%', padding: '1rem', borderRadius: '10px', border: '1px solid #ddd', resize: 'none' }}
-                  ></textarea>
-
-                  {formStatus === 'error' && (
-                    <p style={{ color: '#e74c3c', fontSize: '0.9rem' }}>Something went wrong. Please try again or call us.</p>
-                  )}
-
-                  <button
-                    type="submit"
-                    className="btn btn-primary"
-                    disabled={formStatus === 'submitting'}
-                    style={{ width: '100%', position: 'relative' }}
-                  >
-                    {formStatus === 'submitting' ? 'Sending...' : 'Send Message'}
-                  </button>
-                </form>
-              )}
             </div>
           </div>
         </div>
