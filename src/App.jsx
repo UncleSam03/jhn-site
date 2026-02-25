@@ -11,16 +11,12 @@ import after2 from './assets/images/WhatsApp Image 2026-02-11 at 09.22.05.jpeg';
 import heroImg from './assets/images/h.jpeg';
 
 // Import new batch of images
-import before3 from './assets/images/1000954432.jpg';
-import after3 from './assets/images/1000954433.jpg';
-import before4 from './assets/images/1000954434.jpg';
-import after4 from './assets/images/1000954435.jpg';
-import before5 from './assets/images/1000954503.jpg';
-import after5 from './assets/images/1000954504.jpg';
-import before6 from './assets/images/1000954514.jpg';
-import after6 from './assets/images/1000954512.jpg';
-import before7 from './assets/images/1000954515.jpg';
-import after7 from './assets/images/1000954516.jpg';
+import before3 from './assets/images/garden-before-1.jpg';
+import after3 from './assets/images/garden-after-1.jpg';
+import before4 from './assets/images/WhatsApp Image 2026-02-11 at 09.22.12.jpeg';
+import after4 from './assets/images/WhatsApp Image 2026-02-11 at 09.22.13.jpeg';
+import before5 from './assets/images/WhatsApp Image 2026-02-11 at 09.22.09.jpeg';
+import after5 from './assets/images/WhatsApp Image 2026-02-11 at 09.22.06.jpeg';
 
 const App = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -188,28 +184,18 @@ const App = () => {
                 <div className="showcase-grid" style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(400px, 1fr))', gap: '4rem', marginTop: '4rem' }}>
                   <div style={{ display: 'grid', gap: '1.5rem' }}>
                     <BeforeAfterSlider before={before3} after={after3} />
-                    <h4 style={{ fontSize: '1.4rem' }}>Driveway Restoration</h4>
-                    <p style={{ opacity: 0.8 }}>Complete cleaning and re-sanding of paving blocks.</p>
+                    <h4 style={{ fontSize: '1.4rem' }}>Paving & Patio Extension</h4>
+                    <p style={{ opacity: 0.8 }}>Transforming an old garden into a sleek, modern entertainment area.</p>
                   </div>
                   <div style={{ display: 'grid', gap: '1.5rem' }}>
                     <BeforeAfterSlider before={before4} after={after4} />
-                    <h4 style={{ fontSize: '1.4rem' }}>Kerbing & Edging</h4>
-                    <p style={{ opacity: 0.8 }}>Precision kerbing for a clean, professional finish.</p>
+                    <h4 style={{ fontSize: '1.4rem' }}>Premium Porcelain Patio</h4>
+                    <p style={{ opacity: 0.8 }}>Full patio restoration with modern porcelain tiling and integrated drainage.</p>
                   </div>
                   <div style={{ display: 'grid', gap: '1.5rem' }}>
                     <BeforeAfterSlider before={before5} after={after5} />
-                    <h4 style={{ fontSize: '1.4rem' }}>Patio Excellence</h4>
-                    <p style={{ opacity: 0.8 }}>High-gloss porcelain finish with integrated drainage.</p>
-                  </div>
-                  <div style={{ display: 'grid', gap: '1.5rem' }}>
-                    <BeforeAfterSlider before={before6} after={after6} />
-                    <h4 style={{ fontSize: '1.4rem' }}>Commercial Paving</h4>
-                    <p style={{ opacity: 0.8 }}>Large scale paving projects with industrial durability.</p>
-                  </div>
-                  <div style={{ display: 'grid', gap: '1.5rem' }}>
-                    <BeforeAfterSlider before={before7} after={after7} />
-                    <h4 style={{ fontSize: '1.4rem' }}>Custom Stonework</h4>
-                    <p style={{ opacity: 0.8 }}>Hand-laid patterns using premium natural materials.</p>
+                    <h4 style={{ fontSize: '1.4rem' }}>Full Backyard Overhaul</h4>
+                    <p style={{ opacity: 0.8 }}>Complete structural landscaping featuring new fencing and composite planters.</p>
                   </div>
                 </div>
               </motion.div>
