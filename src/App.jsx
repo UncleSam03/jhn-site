@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Phone, Mail, CheckCircle2, Home, Hammer, Droplets, MapPin, ArrowRight, Instagram, Facebook, Menu, X } from 'lucide-react';
+import { Phone, Mail, CheckCircle2, Home, Hammer, Droplets, MapPin, ArrowRight, Facebook, Menu, X } from 'lucide-react';
 import { motion, AnimatePresence } from 'framer-motion';
 import BeforeAfterSlider from './components/BeforeAfterSlider';
 
@@ -210,7 +210,6 @@ const App = () => {
               JHN <span style={{ color: 'var(--accent)' }}>CONSTRUCTION</span>
             </div>
             <div style={{ display: 'flex', gap: '1.5rem' }}>
-              <a href="#" style={{ background: 'rgba(255,255,255,0.1)', width: '40px', height: '40px', borderRadius: '50%', display: 'flex', alignItems: 'center', justifyContent: 'center' }}><Instagram size={20} /></a>
               <a href="#" style={{ background: 'rgba(255,255,255,0.1)', width: '40px', height: '40px', borderRadius: '50%', display: 'flex', alignItems: 'center', justifyContent: 'center' }}><Facebook size={20} /></a>
             </div>
           </div>
